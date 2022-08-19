@@ -1,7 +1,7 @@
 from PIL import Image, ImageFile
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 import random as rd
-import datetime
+from datetime import datetime
 import getpass
 
 from find_bananas.models import Bananas
@@ -62,9 +62,7 @@ def bananas_of_the_day():
   background1.save(image1)
   background2.save(image2)
   background3.save(image3)
-  print("Round 1 : ", nb_bananas_round1)
-  print("Round 2 : ", nb_bananas_round2)
-  print("Round 3 : ", nb_bananas_round3)
+
   dico_bananas = {
     "round1": {"number": nb_bananas_round1, "image": image1},
     "round2": {"number": nb_bananas_round2, "image": image2},
@@ -80,6 +78,10 @@ def bananas_of_the_day():
     new_bananas.image_2 = dico_bananas["round2"]["image"]
     new_bananas.image_3 = dico_bananas["round3"]["image"]
     new_bananas.save()
-    print("New bananas created :\n" + new_forecast)
-  return dico_bananas
+    print("New bananas created")
+
+  except Exception as e:
+    print(e)
+    pass
+  #return dico_bananas
 
