@@ -17,14 +17,17 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+IS_HEROKU = "DYNO" in os.environ
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=*#42*+gv6oi*lfpw*x+04qr^6%l=xlhq(rqqsf=uf8r7hwffv'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if not IS_HEROKU:
+    DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -126,6 +129,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, '/')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+# Enable WhiteNoise's GZip compression of static assets.
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
