@@ -69,6 +69,7 @@ def bananas_of_the_day():
     "round3": {"number": nb_bananas_round3, "image": image3}
   }
   try:
+    Bananas.objects.latest('timestamp').delete()
     new_bananas = Bananas()
     new_bananas.timestamp = datetime.utcnow()
     new_bananas.nb_bananas_1 = dico_bananas["round1"]["number"]
