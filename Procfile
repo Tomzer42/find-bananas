@@ -1,1 +1,1 @@
-web: gunicorn django_find_bananas.wsgi --log-file -
+web: gunicorn django_find_bananas.wsgi
