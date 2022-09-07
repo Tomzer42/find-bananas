@@ -7,9 +7,9 @@ username = getpass.getuser()
 
 outfile = f'/Users/{username}/find-bananas/banana-thumbnail.png'
 outfile_rotated = f'/Users/{username}/find-bananas/banana-thumbnail_rotated.png'
-image1 = f"/Users/{username}/find-bananas/django_find_bananas/find_bananas/static/images/bananas_of_the_day_round1.png"
-image2 = f"/Users/{username}/find-bananas/django_find_bananas/find_bananas/static/images/bananas_of_the_day_round2.png"
-image3 = f"/Users/{username}/find-bananas/django_find_bananas/find_bananas/static/images/bananas_of_the_day_round3.png"
+image1 = f"/Users/{username}/find-bananas/find_bananas/static/images/bananas_of_the_day_round1.png"
+image2 = f"/Users/{username}/find-bananas/find_bananas/static/images/bananas_of_the_day_round2.png"
+image3 = f"/Users/{username}/find-bananas/find_bananas/static/images/bananas_of_the_day_round3.png"
 
 #Convert bananas.png in thumbnail :
 
