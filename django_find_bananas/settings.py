@@ -146,3 +146,6 @@ CACHES = {
 }
 
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+
+import django_heroku
+django_heroku.settings(locals())
