@@ -2,17 +2,17 @@ from PIL import Image, ImageFile
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 import random as rd
 from datetime import datetime
-import getpass
+import os
 
 from find_bananas.models import Bananas
 
-username = getpass.getuser()
+find_bananas_dir = os.path.dirname(os.path.dirname(__file__))  # get current directory
 
-outfile = f'/Users/{username}/find-bananas/banana-thumbnail.png'
-outfile_rotated = f'/Users/{username}/find-bananas/banana-thumbnail_rotated.png'
-image1 = f"/Users/{username}/find-bananas/find_bananas/static/images/bananas_of_the_day_round1.png"
-image2 = f"/Users/{username}/find-bananas/find_bananas/static/images/bananas_of_the_day_round2.png"
-image3 = f"/Users/{username}/find-bananas/find_bananas/static/images/bananas_of_the_day_round3.png"
+outfile = os.path.join(find_bananas_dir, 'find_bananas/static/images/banana-thumbnail.png')
+outfile_rotated = os.path.join(find_bananas_dir, 'find_bananas/static/images/banana-thumbnail_rotated.png')
+image1 = os.path.join(find_bananas_dir, 'find_bananas/static/images/bananas_of_the_day_round1.png')
+image2 = os.path.join(find_bananas_dir, 'find_bananas/static/images/bananas_of_the_day_round2.png')
+image3 = os.path.join(find_bananas_dir, 'find_bananas/static/images/bananas_of_the_day_round3.png')
 
 #Convert bananas.png in thumbnail :
 
