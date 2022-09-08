@@ -4,15 +4,14 @@ import random as rd
 from datetime import datetime
 import os
 
+from django_find_bananas.settings import BASE_DIR
 from find_bananas.models import Bananas
 
-find_bananas_dir = os.path.dirname(os.path.dirname(__file__))  # get current directory
-
-outfile = os.path.join(find_bananas_dir, 'find_bananas/static/images/banana-thumbnail.png')
-outfile_rotated = os.path.join(find_bananas_dir, 'find_bananas/static/images/banana-thumbnail_rotated.png')
-image1 = os.path.join(find_bananas_dir, 'find_bananas/static/images/bananas_of_the_day_round1.png')
-image2 = os.path.join(find_bananas_dir, 'find_bananas/static/images/bananas_of_the_day_round2.png')
-image3 = os.path.join(find_bananas_dir, 'find_bananas/static/images/bananas_of_the_day_round3.png')
+outfile = os.path.join(BASE_DIR, 'find_bananas/static/images/banana-thumbnail.png')
+outfile_rotated = os.path.join(BASE_DIR, 'find_bananas/static/images/banana-thumbnail_rotated.png')
+image1 = os.path.join(BASE_DIR, 'find_bananas/static/images/bananas_of_the_day_round1.png')
+image2 = os.path.join(BASE_DIR, 'find_bananas/static/images/bananas_of_the_day_round2.png')
+image3 = os.path.join(BASE_DIR, 'find_bananas/static/images/bananas_of_the_day_round3.png')
 
 #Convert bananas.png in thumbnail :
 

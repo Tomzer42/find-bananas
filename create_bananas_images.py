@@ -2,13 +2,13 @@ from PIL import Image
 import random as rd
 import getpass
 
-username = getpass.getuser()
+from django_find_bananas.settings import BASE_DIR
 
-outfile = '/Users/{username}/find-bananas/banana-thumbnail.png'
-outfile_rotated = '/Users/{username}/find-bananas/banana-thumbnail_rotated.png'
-image1 = "/Users/{username}/find-bananas/django_find_bananas/find_bananas/static/images/bananas_of_the_day_round1.png"
-image2 = "/Users/{username}/find-bananas/django_find_bananas/find_bananas/static/images/bananas_of_the_day_round2.png"
-image3 = "/Users/{username}/find-bananas/django_find_bananas/find_bananas/static/images/bananas_of_the_day_round3.png"
+outfile = os.path.join(BASE_DIR, 'find_bananas/static/images/banana-thumbnail.png')
+outfile_rotated = os.path.join(BASE_DIR, 'find_bananas/static/images/banana-thumbnail_rotated.png')
+image1 = os.path.join(BASE_DIR, 'find_bananas/static/images/bananas_of_the_day_round1.png')
+image2 = os.path.join(BASE_DIR, 'find_bananas/static/images/bananas_of_the_day_round2.png')
+image3 = os.path.join(BASE_DIR, 'find_bananas/static/images/bananas_of_the_day_round3.png')
 
 #Convert bananas.png in thumbnail :
 
