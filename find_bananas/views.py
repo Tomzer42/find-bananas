@@ -6,7 +6,7 @@ from find_bananas.models import Bananas
 def home(request):
   print(Bananas.objects.count())
   if Bananas.objects.count() == 0 :
-    bananas_of_the_day()
+    bananas_of_the_day(True)
 
   latest_bananas = Bananas.objects.latest('timestamp')
 
