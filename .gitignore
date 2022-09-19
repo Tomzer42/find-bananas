@@ -1,6 +1,5 @@
 # Our use case #
 ###################
-*.png
 *.pyc
 
 # Compiled source #
