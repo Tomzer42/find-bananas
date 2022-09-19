@@ -24,7 +24,7 @@ image3 = os.path.join(BASE_DIR, 'find_bananas/static/images/bananas_of_the_day_r
 # img.thumbnail(size, Image.ANTIALIAS)
 # img.save(outfile, "PNG")
 
-def bananas_of_the_day():
+def bananas_of_the_day(first_time = False):
 
   img_thumb = Image.open(outfile, 'r').convert("RGBA")
 
@@ -68,7 +68,8 @@ def bananas_of_the_day():
     "round3": {"number": nb_bananas_round3, "image": image3}
   }
   try:
-    Bananas.objects.latest('timestamp').delete()
+    if first_time == False:
+      Bananas.objects.latest('timestamp').delete()
     new_bananas = Bananas()
     new_bananas.timestamp = datetime.utcnow()
     new_bananas.nb_bananas_1 = dico_bananas["round1"]["number"]
