@@ -27,11 +27,8 @@ IS_HEROKU = "DYNO" in os.environ
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-DISABLE_COLLECTSTATIC=1
-if not IS_HEROKU:
-    DEBUG = True
-    DISABLE_COLLECTSTATIC=0
+# Ajouter un dossier statics ou collectstatic via une commande Heroku, mettre ça dans le fichier procfile
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
