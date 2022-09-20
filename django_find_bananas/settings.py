@@ -28,8 +28,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+DISABLE_COLLECTSTATIC=1
 if not IS_HEROKU:
     DEBUG = True
+    DISABLE_COLLECTSTATIC=0
 
 ALLOWED_HOSTS = ['*']
 
