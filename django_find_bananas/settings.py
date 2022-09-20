@@ -27,8 +27,7 @@ IS_HEROKU = "DYNO" in os.environ
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if not IS_HEROKU:
-    DEBUG = True
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
