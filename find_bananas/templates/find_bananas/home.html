@@ -19,13 +19,13 @@
                 <button onClick="showImage3()" type="button" class="btn btn-primary btn-lg">Round 3</button>
             </div>
             <div id="image1" style="display:none;" class="pti-marg">
-                <img style="height: 100%; width: 100%; object-fit: contain" src="{% static 'images/bananas_of_the_day_round1.png' %}"/>
+                <img style="height: 100%; width: 100%; object-fit: contain" src="{% static 'images/bananas_of_the_day_round1.png?v={{dico.timestamp}}' %}"/>
             </div>
             <div id="image2" style="display:none;" class="pti-marg">
-                <img style="height: 100%; width: 100%; object-fit: contain" src="{% static 'images/bananas_of_the_day_round2.png' %}"/>
+                <img style="height: 100%; width: 100%; object-fit: contain" src="{% static 'images/bananas_of_the_day_round2.png?v={{dico.timestamp}}' %}"/>
             </div>
             <div id="image3" style="display:none;" class="pti-marg">
-                <img style="height: 100%; width: 100%; object-fit: contain" src="{% static 'images/bananas_of_the_day_round3.png' %}"/>
+                <img style="height: 100%; width: 100%; object-fit: contain" src="{% static 'images/bananas_of_the_day_round3.png?v={{dico.timestamp}}' %}"/>
             </div>
             <div id="input1" style="display:none;">
                 <form onsubmit="return false" method="get" id="form1" class="form-inline">
