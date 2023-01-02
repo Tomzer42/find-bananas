@@ -6,7 +6,7 @@ from datetime import datetime
 
 def home(request):
   print(Bananas.objects.count())
-  print(Bananas.objects.latest('timestamp'))
+  print(Bananas.objects.latest('timestamp').nb_bananas_1)
   if Bananas.objects.count() == 0 :
     bananas_of_the_day(True)
 
